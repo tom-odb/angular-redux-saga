@@ -1,0 +1,5 @@
+<h1>Todos</h1>
+
+<span *ngIf="loading$ | async">Loading...</span>
+
+<rs-list *ngIf="!(loading$ | async)" [todos]="todos$ | async" (completed)="handleCompleted($event)"></rs-list>

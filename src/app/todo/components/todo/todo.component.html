@@ -1,0 +1,12 @@
+<p>
+  <s *ngIf="todo?.done">{{todo?.task}}</s>
+  <span *ngIf="!todo?.done">{{todo?.task}}</span>
+</p>
+<p>
+  <small><s *ngIf="todo?.done">{{todo?.createdDate | date:"medium"}}</s></small>
+  <small *ngIf="!todo?.done">{{todo?.createdDate | date:"medium"}}</small>
+</p>
+<button (click)="handleCompleted()" [disabled]="todo?.done">
+  <s *ngIf="todo?.done">Done!</s>
+  <span *ngIf="!todo?.done">Done!</span>
+</button>
